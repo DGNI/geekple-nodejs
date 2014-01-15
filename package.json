@@ -1,0 +1,32 @@
+{
+  "name": "geekple",
+  "version": "0.9.7",
+  "description": "GeekPLE for developers",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/geekple/geekple-nodejs.git"
+  },
+  "main": "src/index.js",
+  "bin": {
+    "geekple": "./bin/geekple"
+    , "g": "./bin/geekple"
+    , "gp": "./bin/geekple"
+  },
+  "keywords": [
+    "geekple", "developer", "software", "cli"
+  ],
+  "dependencies": {
+    "request": "2.21.0"
+    , "colors": "0.6.2"
+    , "opener": "1.3.0"
+    , "mkdirp": "0.3.5"
+    , "read": "1.0.5"
+    , "ini": "1.1.0"
+    , "optimist": "0.6.0"
+    , "node.extend": "1.0.9"
+  },
+  "author": "Daegeun Kim <dgkim84@gmail.com>",
+  "licenses": [
+    {"type": "Apache", "url": "https://github.com/geekple/geekple-nodejs/blob/master/LICENSE"}
+  ]
+}

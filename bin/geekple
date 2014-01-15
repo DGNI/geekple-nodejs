@@ -1,0 +1,40 @@
+#!/usr/bin/env node
+;(function() {
+var colors = require('colors')
+  , geekple = require(__dirname+'/../src/index');
+
+geekple.load(function() {
+  var node = process.argv.shift();
+  var file = process.argv.shift();
+  var command = process.argv.shift();
+  if (command) {
+    geekple.run(command, process.argv, function(e) {
+      if (e && e.code == 'validation') {
+        help();
+      } else if (e && e.errno) {
+        console.error(e);
+      }
+      geekple.destroy();
+    });
+  } else {
+    help();
+    geekple.destroy();
+    process.exit(1);
+  }
+});
+
+function help() {
+  console.error('Usage: geekple COMMAND');
+  console.error('where COMMAND is one of:');
+  console.error();
+  console.error('   login'.red + ' \tCreate or verify a user in the geekple, and save the temporary token to the ~/.geekple/config file.');
+  console.error('   whoami'.red + ' \tShow geekple username.');
+  console.error('   init'.red + ' \tCreate an empty GeekPLE working tree.');
+  console.error('   add'.red + ' \t\tUpload markdown file specified to team repository on GeekPLE.');
+  console.error('   status'.red + ' \tShow the working tree status.');
+  console.error('   open'.red + ' \tOpen the draft on GeekPLE.');
+  console.error('   diff'.red + ' \tShow changes.');
+  console.error();
+  console.error('See http://geekple.com/teams/geekple/snippets/20 for more details.');
+}
+})();
