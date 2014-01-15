@@ -1,4 +1,3 @@
-geekple-nodejs
-==============
+# CLI for GeekPLE for developers
 
-GeekPLE
+[Documents](http://geekple.com/teams/geekple/snippets/20)
